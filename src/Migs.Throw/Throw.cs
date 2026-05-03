@@ -43,14 +43,6 @@ namespace Migs.Throw
         public static void IfNullOrEmpty(string value, Exception exception) => If(string.IsNullOrEmpty(value), exception);
 
         /// <summary>
-        /// Throws the given exception if the given value is null, empty or consists only of white-space characters.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="exception"></param>
-        /// <exception cref="ArgumentNullException"><paramref name="exception"/> is <c>null</c>.</exception>
-        public static void IfNullOrWhiteSpace(string value, Exception exception) => If(string.IsNullOrWhiteSpace(value), exception);
-
-        /// <summary>
         /// Throws the given exception if the given collection is null or empty.
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -81,6 +73,14 @@ namespace Migs.Throw
             foreach ((object obj, Exception exception) in args)
                 If(obj is null, exception);
         }
+
+        /// <summary>
+        /// Throws the given exception if the given value is null, empty or consists only of white-space characters.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="exception"></param>
+        /// <exception cref="ArgumentNullException"><paramref name="exception"/> is <c>null</c>.</exception>
+        public static void IfNullOrWhiteSpace(string value, Exception exception) => If(string.IsNullOrWhiteSpace(value), exception);
 
         #endregion
     }
