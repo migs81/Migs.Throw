@@ -49,7 +49,7 @@ namespace Migs.Throw
         /// <param name="collection"></param>
         /// <param name="exception"></param>
         /// <exception cref="ArgumentNullException"><paramref name="exception"/> is <c>null</c>.</exception>
-        public static void IfNullOrEmpty<T>(IEnumerable<T> collection, Exception exception) => If(collection?.Any() != true, exception);
+        public static void IfNullOrEmpty<T>(IEnumerable<T> collection, Exception exception) => If(collection is null || !collection.Any(), exception);
 
         /// <summary>
         /// Throws the given exception if the given collection is null or empty.
@@ -58,7 +58,7 @@ namespace Migs.Throw
         /// <param name="collection"></param>
         /// <param name="exception"></param>
         /// <exception cref="ArgumentNullException"><paramref name="exception"/> is <c>null</c>.</exception>
-        public static void IfNullOrEmpty<T>(ICollection<T> collection, Exception exception) => If(collection?.Any() != true, exception);
+        public static void IfNullOrEmpty<T>(ICollection<T> collection, Exception exception) => If(collection is null || collection.Count == 0, exception);
 
         /// <summary>
         /// Throws the given exception if any of the given objects is null.
