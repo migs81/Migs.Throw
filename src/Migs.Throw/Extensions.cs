@@ -8,7 +8,7 @@ namespace Migs.Throw
     /// <summary>
     /// Contains some extension methods for various types.
     /// </summary>
-    public static partial class Extensions
+    public static class Extensions
     {
         /// <summary>
         /// Throws the given exception if the expression is true.
@@ -57,18 +57,6 @@ namespace Migs.Throw
         }
 
         /// <summary>
-        /// Throws an ArgumentException if the given value is null, empty or consists only of white-space characters.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="message"></param>
-        /// <returns>The given value.</returns>
-        public static string ThrowIfNullOrWhiteSpace(this string value, string message = "Argument can not be null, empty or consists only of white-space characters!")
-        {
-            Throw<ArgumentException>.IfNullOrWhiteSpace(value, message);
-            return value;
-        }
-
-        /// <summary>
         /// Throws an ArgumentException if the given collection is null or empty.
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -92,6 +80,18 @@ namespace Migs.Throw
         {
             Throw<ArgumentException>.IfNullOrEmpty(collection, message);
             return collection;
+        }
+        
+        /// <summary>
+        /// Throws an ArgumentException if the given value is null, empty or consists only of white-space characters.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="message"></param>
+        /// <returns>The given value.</returns>
+        public static string ThrowIfNullOrWhiteSpace(this string value, string message = "Argument can not be null, empty or consists only of white-space characters!")
+        {
+            Throw<ArgumentException>.IfNullOrWhiteSpace(value, message);
+            return value;
         }
     }
 }
