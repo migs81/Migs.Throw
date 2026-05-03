@@ -10,7 +10,7 @@ namespace Migs.Throw.Generic
     /// Contains some methods for throwing exceptions on specifc conditions.
     /// </summary>
     /// <typeparam name="TException"></typeparam>
-    public static partial class Throw<TException> where TException : Exception
+    public static class Throw<TException> where TException : Exception
     {
         #region New
 
