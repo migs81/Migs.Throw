@@ -187,7 +187,7 @@ namespace Migs.Throw.Generic
         /// <param name="message"></param>
         /// <param name="innerException"></param>
         public static void IfNullOrEmpty<T>(IEnumerable<T> collection, string message, Exception innerException) => 
-            IfNullOrEmpty<T>(collection, message, null, innerException);
+            IfNullOrEmpty(collection, message, null, innerException);
 
         /// <summary>
         /// Throws the specified exception if the given collection is null or empty.
@@ -228,7 +228,7 @@ namespace Migs.Throw.Generic
         /// <param name="message"></param>
         /// <param name="innerException"></param>
         public static void IfNullOrEmpty<T>(ICollection<T> collection, string message, Exception innerException) 
-            => IfNullOrEmpty<T>(collection, message, null, innerException);
+            => IfNullOrEmpty(collection, message, null, innerException);
 
         /// <summary>
         /// Throws the specified exception if the given collection is null or empty.
