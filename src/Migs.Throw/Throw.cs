@@ -8,7 +8,7 @@ namespace Migs.Throw
     /// <summary>
     /// Contains some methods for throwing exceptions on specifc conditions.
     /// </summary>
-    public static partial class Throw
+    public static class Throw
     {
         #region public methods
 
