@@ -198,7 +198,7 @@ namespace Migs.Throw.Generic
         /// <param name="innerException"></param>
         public static void IfNullOrEmpty<T>(IEnumerable<T> collection, string? message, string? paramName, Exception? innerException)
         {
-            if (collection?.Any() != true)
+            if (collection is null || !collection.Any())
                 throw ExceptionHelper.Create<TException>(message, paramName, innerException);
         }
 
