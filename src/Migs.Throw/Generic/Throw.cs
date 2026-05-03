@@ -7,7 +7,7 @@ using Migs.Throw.Helper;
 namespace Migs.Throw.Generic
 {
     /// <summary>
-    /// Contains some methods for throwing exceptions on specifc conditions.
+    /// Contains some methods for throwing exceptions on specific conditions.
     /// </summary>
     /// <typeparam name="TException"></typeparam>
     public static class Throw<TException> where TException : Exception
