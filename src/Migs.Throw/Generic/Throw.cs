@@ -92,14 +92,14 @@ namespace Migs.Throw.Generic
         /// Throws the specified exception if the given argument is null.
         /// </summary>
         /// <param name="obj"></param>
-        public static void IfNull(object obj) => IfNull(obj, null, null, null);
+        public static void IfNull(object? obj) => IfNull(obj, null, null, null);
 
         /// <summary>
         /// Throws the specified exception if the given object is null.
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="message"></param>
-        public static void IfNull(object obj, string message) => IfNull(obj, message, null, null);
+        public static void IfNull(object? obj, string message) => IfNull(obj, message, null, null);
 
         /// <summary>
         /// Throws the specified exception if the given object is null.
@@ -107,7 +107,7 @@ namespace Migs.Throw.Generic
         /// <param name="obj"></param>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public static void IfNull(object obj, string message, Exception innerException) => 
+        public static void IfNull(object? obj, string message, Exception innerException) => 
             IfNull(obj, message, null, innerException);
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Migs.Throw.Generic
         /// <param name="message"></param>
         /// <param name="paramName"></param>
         /// <param name="innerException"></param>
-        public static void IfNull(object obj, string? message, string? paramName, Exception? innerException) 
+        public static void IfNull(object? obj, string? message, string? paramName, Exception? innerException) 
             => _ = obj ?? throw ExceptionHelper.Create<TException>(message, paramName, innerException);
 
         #endregion
@@ -128,7 +128,7 @@ namespace Migs.Throw.Generic
         /// Throws the specified exception if the given value is null or empty.
         /// </summary>
         /// <param name="value"></param>
-        public static void IfNullOrEmpty(string value) => 
+        public static void IfNullOrEmpty(string? value) => 
             IfNullOrEmpty(value, null, null, null);
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Migs.Throw.Generic
         /// </summary>
         /// <param name="value"></param>
         /// <param name="message"></param>
-        public static void IfNullOrEmpty(string value, string message) => 
+        public static void IfNullOrEmpty(string? value, string message) => 
             IfNullOrEmpty(value, message, null, null);
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Migs.Throw.Generic
         /// <param name="value"></param>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public static void IfNullOrEmpty(string value, string message, Exception innerException) => 
+        public static void IfNullOrEmpty(string? value, string message, Exception innerException) => 
             IfNullOrEmpty(value, message, null, innerException);
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Migs.Throw.Generic
         /// <param name="message"></param>
         /// <param name="paramName"></param>
         /// <param name="innerException"></param>
-        public static void IfNullOrEmpty(string value, string? message, string? paramName, Exception? innerException)
+        public static void IfNullOrEmpty(string? value, string? message, string? paramName, Exception? innerException)
         {
             if (string.IsNullOrEmpty(value))
                 throw ExceptionHelper.Create<TException>(message, paramName, innerException);
@@ -166,7 +166,7 @@ namespace Migs.Throw.Generic
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="collection"></param>
-        public static void IfNullOrEmpty<T>(IEnumerable<T> collection) => 
+        public static void IfNullOrEmpty<T>(IEnumerable<T>? collection) => 
             IfNullOrEmpty(collection, null, null, null);
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Migs.Throw.Generic
         /// <typeparam name="T"></typeparam>
         /// <param name="collection"></param>
         /// <param name="message"></param>
-        public static void IfNullOrEmpty<T>(IEnumerable<T> collection, string message) => 
+        public static void IfNullOrEmpty<T>(IEnumerable<T>? collection, string message) => 
             IfNullOrEmpty(collection, message, null, null);
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Migs.Throw.Generic
         /// <param name="collection"></param>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public static void IfNullOrEmpty<T>(IEnumerable<T> collection, string message, Exception innerException) => 
+        public static void IfNullOrEmpty<T>(IEnumerable<T>? collection, string message, Exception innerException) => 
             IfNullOrEmpty(collection, message, null, innerException);
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Migs.Throw.Generic
         /// <param name="message"></param>
         /// <param name="paramName"></param>
         /// <param name="innerException"></param>
-        public static void IfNullOrEmpty<T>(IEnumerable<T> collection, string? message, string? paramName, Exception? innerException)
+        public static void IfNullOrEmpty<T>(IEnumerable<T>? collection, string? message, string? paramName, Exception? innerException)
         {
             if (collection is null || !collection.Any())
                 throw ExceptionHelper.Create<TException>(message, paramName, innerException);
@@ -207,7 +207,7 @@ namespace Migs.Throw.Generic
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="collection"></param>
-        public static void IfNullOrEmpty<T>(ICollection<T> collection) => 
+        public static void IfNullOrEmpty<T>(ICollection<T>? collection) => 
             IfNullOrEmpty(collection, null, null, null);
 
         /// <summary>
@@ -216,7 +216,7 @@ namespace Migs.Throw.Generic
         /// <typeparam name="T"></typeparam>
         /// <param name="collection"></param>
         /// <param name="message"></param>
-        public static void IfNullOrEmpty<T>(ICollection<T> collection, string message) => 
+        public static void IfNullOrEmpty<T>(ICollection<T>? collection, string message) => 
             IfNullOrEmpty(collection, message, null, null);
 
         /// <summary>
@@ -226,7 +226,7 @@ namespace Migs.Throw.Generic
         /// <param name="collection"></param>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public static void IfNullOrEmpty<T>(ICollection<T> collection, string message, Exception innerException) 
+        public static void IfNullOrEmpty<T>(ICollection<T>? collection, string message, Exception innerException) 
             => IfNullOrEmpty(collection, message, null, innerException);
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace Migs.Throw.Generic
         /// <param name="message"></param>
         /// <param name="paramName"></param>
         /// <param name="innerException"></param>
-        public static void IfNullOrEmpty<T>(ICollection<T> collection, string? message, string? paramName, Exception? innerException)
+        public static void IfNullOrEmpty<T>(ICollection<T>? collection, string? message, string? paramName, Exception? innerException)
         {
             if (collection is null || collection.Count == 0)
                 throw ExceptionHelper.Create<TException>(message, paramName, innerException);
@@ -251,7 +251,7 @@ namespace Migs.Throw.Generic
         /// Throws the specified exception if the given value is null, empty or consists only of white-space characters.
         /// </summary>
         /// <param name="value"></param>
-        public static void IfNullOrWhiteSpace(string value) => 
+        public static void IfNullOrWhiteSpace(string? value) => 
             IfNullOrWhiteSpace(value, null, null, null);
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace Migs.Throw.Generic
         /// </summary>
         /// <param name="value"></param>
         /// <param name="message"></param>
-        public static void IfNullOrWhiteSpace(string value, string message) => 
+        public static void IfNullOrWhiteSpace(string? value, string message) => 
             IfNullOrWhiteSpace(value, message, null, null);
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace Migs.Throw.Generic
         /// <param name="value"></param>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public static void IfNullOrWhiteSpace(string value, string message, Exception innerException) 
+        public static void IfNullOrWhiteSpace(string? value, string message, Exception innerException) 
             => IfNullOrWhiteSpace(value, message, null, innerException);
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace Migs.Throw.Generic
         /// <param name="message"></param>
         /// <param name="paramName"></param>
         /// <param name="innerException"></param>
-        public static void IfNullOrWhiteSpace(string value, string? message, string? paramName, Exception? innerException)
+        public static void IfNullOrWhiteSpace(string? value, string? message, string? paramName, Exception? innerException)
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw ExceptionHelper.Create<TException>(message, paramName, innerException);
