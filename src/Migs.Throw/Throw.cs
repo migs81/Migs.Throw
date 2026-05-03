@@ -69,7 +69,7 @@ namespace Migs.Throw
         {
             _ = args ?? throw new ArgumentNullException(nameof(args));
 
-            foreach ((object obj, Exception exception) in args)
+            foreach (var (obj, exception) in args)
                 If(obj is null, exception);
         }
 
