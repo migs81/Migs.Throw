@@ -5,6 +5,7 @@
 		<LangVersion>default</LangVersion>
 		<AssemblyName>Migs.Throw</AssemblyName>
 		<TargetFrameworks>net10.0;net6.0;net8.0</TargetFrameworks>
+		<Version>1.0.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
