@@ -310,7 +310,7 @@ namespace Migs.Throw.Generic
         {
             _ = args ?? throw new ArgumentNullException(nameof(args));
 
-            foreach ((object obj, string message) in args)
+            foreach (var (obj, message) in args)
                 IfNull(obj, message);
         }
 
@@ -340,7 +340,7 @@ namespace Migs.Throw.Generic
         {
             _ = args ?? throw new ArgumentNullException(nameof(args));
 
-            foreach ((string value, string message) in args)
+            foreach (var (value, message) in args)
                 IfNullOrEmpty(value, message);
         }
 
