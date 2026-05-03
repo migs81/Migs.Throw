@@ -64,7 +64,6 @@ namespace Migs.Throw
         /// Throws the given exception if any of the given objects is null.
         /// </summary>
         /// <param name="args"></param>
-        /// <param name="exception"></param>
         /// <exception cref="ArgumentNullException"><paramref name="args"/> is <c>null</c>.</exception>
         public static void IfAnyNull(params (object obj, Exception exception)[] args)
         {
