@@ -6,7 +6,7 @@ using System.Linq;
 namespace Migs.Throw
 {
     /// <summary>
-    /// Contains some methods for throwing exceptions on specifc conditions.
+    /// Contains some methods for throwing exceptions on specific conditions.
     /// </summary>
     public static class Throw
     {
