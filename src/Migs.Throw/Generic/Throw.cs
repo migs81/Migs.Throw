@@ -59,7 +59,6 @@ namespace Migs.Throw.Generic
         /// </summary>
         /// <param name="condition"></param>
         /// <param name="message"></param>
-        [DoesNotReturn]
         public static void If([DoesNotReturnIf(true)] bool condition, string message) =>
             If(condition, message, null, null);
 
